@@ -1,0 +1,16 @@
+{
+  "name": "csstricksir-portofolio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Heydar Shams <shamsheidar.79@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start":"run-p server sass",
+    "server": "browser-sync start --server . --serveStatic .tmp --files .tmp, index.html",
+    "sass": "node-sass src/style/main.scss .tmp/style/main.css -w"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "node-sass": "^5.0.0"
+  }
+}
