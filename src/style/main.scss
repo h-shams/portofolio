@@ -126,10 +126,10 @@ body {
   margin: 1.4em .5em 1em;
 }
 .heading--large{
-  font-size: 2em;
+  font-size: 2.3em;
 }
 .heading--medium{
-  font-size: 1.5em;
+  font-size: 1.8em;
 }
 
 .header__paragraph{
@@ -167,12 +167,15 @@ body {
 }
 
 .section{
-  background-color: $very-light-gray;
   padding: 2em 0;
+  background-color: $very-light-gray;
+}
+
+.features{
+  background-color: $light-grayish-blue;
 }
 
 .section__title{
-  width: 50%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -207,4 +210,44 @@ body {
 
 .feature__paragraph{
   margin: .5em;
+}
+
+
+.card{
+  border-radius: 0.45em;
+  margin: 1.5em 0;
+  overflow: hidden;
+  background-color: $white;
+}
+
+.card__img-wrapper{
+  width: 100%;
+  display: block;
+  overflow: hidden;
+}
+
+.card__img{
+  width: 100%;
+  height: auto;
+}
+
+.card__contents{
+  padding: 1.5em 1em;
+}
+
+.card__author{
+  color: $grayish-blue;
+  font-size: .75em;
+
+}
+
+.card__title{
+  text-align: left;
+  margin: .5em 0 .75em;
+}
+
+.card__paragraph{
+  text-align: left;
+  margin: 1em 0;
+
 }
