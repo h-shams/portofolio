@@ -8,8 +8,6 @@ body {
   font-family: 'public-sans';
   margin: 0;
   font-size: 1.125rem;
-
-  background-color: $grayish-blue;
 }
 
 .header{
@@ -92,4 +90,121 @@ body {
     outline: none;
     box-shadow: 0 0 0 .25em $lime-green;
   }
+}
+
+.header__main{
+  background-image: url("../src/images/bg-intro-mobile.svg");
+  background-size: contain;
+  background-position: top;
+  background-repeat: no-repeat;
+}
+
+.header__img-wrapper{
+  width: 100%;
+  height: 18em;
+  position: relative;
+  overflow: hidden;
+}
+
+.header__img{
+  position: absolute;
+  width: 100%;
+  height: auto;
+  bottom: 0;
+  display: block;
+}
+
+.header__content{
+
+}
+
+.heading{
+  font-weight: 300;
+  color: $dark-blue;
+  font-size: 1.1em;
+  text-align: center;
+  margin: 1.4em .5em 1em;
+}
+.heading--large{
+  font-size: 2em;
+}
+.heading--medium{
+  font-size: 1.5em;
+}
+
+.header__paragraph{
+  color: $grayish-blue;
+  margin: 1em 1.5em;
+  font-size: .85em;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.button{
+  display: block;
+  margin: 2em auto;
+  padding: 1em 2em;
+  border: none;
+  background-color: $lime-green;
+  background-image:linear-gradient(to right, $lime-green, $bright-cyan);
+  border-radius: 1000px;
+  color: $white;
+  font-weight: 700;
+
+  &:hover{
+    background-image:linear-gradient(to right, lighten($lime-green, 10), lighten($bright-cyan, 10));
+  }
+  // &:focus{
+  //   outline: none;
+  //   box-shadow: 0 0 0 .25em $lime-green;
+  // }
+}
+
+.inner-container{
+  width: 90%;
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.section{
+  background-color: $very-light-gray;
+  padding: 2em 0;
+}
+
+.section__title{
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.paragraph{
+  color: $grayish-blue;
+  margin: 1em 1.5em;
+  font-size: .85em;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.section__paragraph{
+  padding-bottom: 3em;
+}
+
+.feature{
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin: 1.5em 0;
+}
+
+.feature__img{
+  width: 4em;
+}
+
+.feature__heading{
+  margin: 1.1em .5em 0.3em;
+}
+
+.feature__paragraph{
+  margin: .5em;
 }
