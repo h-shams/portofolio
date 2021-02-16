@@ -10,6 +10,27 @@ body {
   font-size: 1.125rem;
 }
 
+.button{
+  display: block;
+  margin: 2em auto;
+  padding: 1em 2em;
+  border: none;
+  background-color: $lime-green;
+  background-image:linear-gradient(to right, $lime-green, $bright-cyan);
+  border-radius: 1000px;
+  color: $white;
+  font-weight: 700;
+  transition: .3s background-image ease ;
+
+  &:hover{
+    background-image:linear-gradient(to right, lighten($lime-green, 10), lighten($bright-cyan, 10));
+  }
+  // &:focus{
+  //   outline: none;
+  //   box-shadow: 0 0 0 .25em $lime-green;
+  // }
+}
+
 .header{
 }
 
@@ -20,6 +41,11 @@ body {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  align-items: center;
+
+  @media(min-width: 45em){
+    padding: 0 1em;
+  }
 }
 
 .logo{
@@ -39,7 +65,10 @@ body {
   width: 100%;
   margin: 0;
   background-color: transparent;
-  transition: .3s opacity ease;
+
+  @media(min-width: 45em){
+    padding: 0;
+  }
 }
 
 
@@ -53,6 +82,15 @@ body {
   pointer-events: none;
   z-index: 10;
   overflow: hidden;
+  transition: .3s opacity ease;
+
+  @media(min-width: 45em){
+    position: static;
+    background-image: none;
+    opacity: 1;
+    pointer-events: auto;
+    width: auto;
+  }
 
   .header.nav-open &{
     opacity: 1;
@@ -60,6 +98,8 @@ body {
   }
 
 }
+
+
 
 .nav__list{
   padding: 2em;
@@ -73,12 +113,30 @@ body {
     border-radius: .25em;
     transform: translate3d(0, -1em, 0);
 
+    @media(min-width: 45em){
+      margin: 0 1em;
+      padding: 0;
+      width: auto;
+      display: flex;
+      border-radius: 0;
+      transform: translate3d(0, 0, 0);
+      flex-flow: row wrap;
+      background-color: transparent;
+      box-shadow: none;
+      overflow: hidden;
+    }
   }
 
   .nav-open .nav--toggleable &{
     transform: translate3d(0, 0, 0);
   }
 
+}
+
+.nav__list-item{
+  @media(min-width: 45em){
+    margin: 0 .5em;
+  }
 }
 
 .nav__link{
@@ -94,6 +152,37 @@ body {
     color: $lime-green;
     outline: none;
   }
+
+  @media(min-width: 45em){
+    display: block;
+    padding: 1.5em 0;
+    position: relative;
+
+    &:hover, &:focus{
+      color: inherit;
+    }
+
+    &::after{
+      content: ' ';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: .25em;
+      background-color: $lime-green;
+      background-image: linear-gradient(to right ,$lime-green, $bright-cyan);
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      transition: .3s opacity ease, .3s transform ease;
+      transform: translate3d(0,0.25em,0);
+    }
+
+    &:hover::after, &:focus::after{
+      opacity: 1;
+      transform: translate3d(0,0,0);
+    }
+  }
 }
 
 .header__nav-toggle{
@@ -106,6 +195,10 @@ body {
   align-items: center;
   position: relative;
   min-width: 3em;
+
+  @media(min-width: 45em){
+    display: none;
+  }
 
   .header & svg{
     & #line1, & #line2, & #line3{
@@ -150,6 +243,15 @@ body {
   }
   &:focus::after{
     opacity: 1;
+  }
+}
+
+.header__top-btn{
+  display: none;
+
+  @media(min-width: 45em){
+    display: block;
+    margin: 0;
   }
 }
 
@@ -200,27 +302,6 @@ body {
   font-size: .85em;
   text-align: center;
   line-height: 1.5;
-}
-
-.button{
-  display: block;
-  margin: 2em auto;
-  padding: 1em 2em;
-  border: none;
-  background-color: $lime-green;
-  background-image:linear-gradient(to right, $lime-green, $bright-cyan);
-  border-radius: 1000px;
-  color: $white;
-  font-weight: 700;
-  transition: .3s background-image ease ;
-
-  &:hover{
-    background-image:linear-gradient(to right, lighten($lime-green, 10), lighten($bright-cyan, 10));
-  }
-  // &:focus{
-  //   outline: none;
-  //   box-shadow: 0 0 0 .25em $lime-green;
-  // }
 }
 
 .inner-container{

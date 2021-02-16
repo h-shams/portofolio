@@ -10,3 +10,12 @@ $grayish-blue: hsl(233, 8%, 62%);
 $light-grayish-blue: hsl(220, 16%, 96%);
 $very-light-gray: hsl(0, 0%, 98%);
 $white: hsl(0, 0%, 100%);
+
+
+// ************* MediaQuery Conditions
+
+$mq-conditions: (
+  'mobile': 'max-width: 22.22em', // smaller than 400px
+  'tablet': 'minwidth: 22.22em and max-width: 44.44em', // between 400px and 800px
+  'desktop': 'min-width: 44.44em' // bigger than 800px
+)
