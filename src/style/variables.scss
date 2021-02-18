@@ -15,7 +15,18 @@ $white: hsl(0, 0%, 100%);
 // ************* MediaQuery Conditions
 
 $mq-conditions: (
-  'mobile': 'max-width: 22.22em', // smaller than 400px
-  'tablet': 'minwidth: 22.22em and max-width: 44.44em', // between 400px and 800px
-  'desktop': 'min-width: 44.44em' // bigger than 800px
-)
+  'top-header-nav': 'min-width: 50em',
+  'header-bg': 'min-width: 45em',
+  'inner-container': 'min-width: 62em',
+  'section-title': 'min-width: 40em',
+  'footer-center': 'min-width: 60em',
+  'footer-nav-item-width': 'min-width: 30em'
+);
+
+
+@mixin mq($mq-condition){
+  $condition: map-get($mq-conditions, $mq-condition);
+  @media ($condition) {
+    @content
+  }
+}
