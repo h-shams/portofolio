@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+  <g fill="#2D314D" fill-rule="evenodd">
+    <path style="fill: #f006;" d="M3.5 3.5h17v17H3.5z"/>
+    <path id='line1' d="M0 6h24v1H0z"/>
+    <path id='line2' d="M0 11h24v1H0z"/>
+    <path id='line3' d="M0 16h24v1H0z"/>
+  </g>
+</svg>
+
+<!-- 1st -->
+<!-- translate(8.2px,-1.06px) rotate(45deg) -->
+
+<!-- 2nd -->
+<!-- opacity: 0 -->
+
+<!-- 3rd -->
+<!-- translate(-8.3px,8.94px) rotate(-45deg) -->
