@@ -257,14 +257,14 @@ body {
 
 
 .header__main{
-  background-image: url("../src/images/bg-intro-mobile.svg");
+  background-image: url("../images/bg-intro-mobile.svg");
   background-size: contain;
   background-size: 100% 50%;
   background-position: top;
   background-repeat: no-repeat;
 
   @include mq('header-bg'){
-    background-image: url("../src/images/bg-intro-desktop.svg");
+    background-image: url("../images/bg-intro-desktop.svg");
     background-position: 470% bottom;
     background-size: 90% 135%;
     display: flex;

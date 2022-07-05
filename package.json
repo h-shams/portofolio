@@ -5,13 +5,33 @@
   "author": "Heydar Shams <shamsheidar.79@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "run-p server sass",
-    "server": "browser-sync start --server . --serveStatic .tmp --files .tmp, index.html",
-    "sass": "node-sass src/style/main.scss .tmp/style/main.css -w"
+    "start": "run-p copy dev:sass watch server",
+    "server": "browser-sync start --server . --serveStatic .tmp --files .tmp, index.html --no-open",
+    "watch:js": "onchange 'src/scripts/**/*' -- 'npm run copy:js'",
+    "dev:sass": "node-sass src/style/main.scss .tmp/style/main.css -w",
+    "copy:fonts": "copy src/fonts/**/* ./.tmp/fonts",
+    "copy:images": "copy src/images/**/* ./.tmp/images",
+    "copy:js": "copy src/scripts/**/* ./.tmp/scripts",
+    "copy": "run-s copy:*",
+    "watch:js": "onchange 'src/scripts/**/*' -- npm run copy:js",
+    "watch:fonts": "onchange 'src/fonts/**/*' -- npm run copy:fonts",
+    "watch:images": "onchange 'src/images/**/*' -- npm run copy:images",
+    "watch": "run-p watch:*",
+
+    
+    "build:sass": "node-sass src/style/main.scss dist/style/main.css",
+    "build:fonts": "copy src/fonts/**/* dist/fonts",
+    "build:images": "copy src/images/**/* dist/images",
+    "build:js": "copy src/scripts/**/* dist/scripts",
+    "build:html": "copy *.html dist",
+    "build": "run-s build:*",
+    "server-build": "browser-sync start --server dist --no-open"
   },
   "devDependencies": {
     "browser-sync": "^2.26.14",
+    "copy": "^0.3.2",
     "node-sass": "^5.0.0",
-    "npm-run-all": "^4.1.5"
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.1.0"
   }
 }
